@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    .container {
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+    }
+    .teddy {
+      width: 200px;
+      margin-bottom: 15px;
+    }
+    h1 {
+      color: white;
+      font-size: 2.2rem;
+    }
+    
+
+     
+    .main-text {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #e76565; /* bright white */
+  text-align: center;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* glow effect */
+  margin: 20px 0;
+}
+
+
+/* Buttons container - PERFECT CENTER */
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Common button style */
+.btn {
+  padding: 14px 34px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* YES button */
+.yes {
+  background: #ff4d6d;
+  color: white;
+  box-shadow: 0 6px 15px rgba(255, 77, 109, 0.4);
+}
+
+.yes:hover {
+  transform: scale(1.08);
+}
+
+/* NO button */
+.no {
+  background: #6b7280;
+  color: white;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+    
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ✅ EMBEDDED GIF (NO FILE NEEDED) -->
+  <img
+    class="teddy"
+    src="https://media.tenor.com/UXLmgQdkDesAAAAM/robert-bri.gif"
+    alt="love teddy"
+  >
+
+  <h1 class="main-text">Will you be my Valentine?</h1>
+
+  <div class="buttons">
+    <button class="btn yes" onclick="yesClicked()">Yes</button>
+    <button class="btn no" id="noBtn">No</button>
+  </div>
+
+</div>
+
+<script>
+  const noBtn = document.getElementById("noBtn");
+
+  noBtn.addEventListener("mouseover", () => {
+    const btnWidth = noBtn.offsetWidth;
+    const btnHeight = noBtn.offsetHeight;
+
+    const maxX = window.innerWidth - btnWidth;
+    const maxY = window.innerHeight - btnHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noBtn.style.position = "fixed";   // 🔥 very important
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+  });
+
+
+  noBtn.addEventListener("click", () => {
+  const btnWidth = noBtn.offsetWidth;
+  const btnHeight = noBtn.offsetHeight;
+
+  const maxX = window.innerWidth - btnWidth;
+  const maxY = window.innerHeight - btnHeight;
+
+  noBtn.style.left = Math.random() * maxX + "px";
+  noBtn.style.top = Math.random() * maxY + "px";
+});
+
+
+  function yesClicked() {
+    document.body.innerHTML = `
+      <div style="
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        background:linear-gradient(135deg,#ff758c,#ff7eb3);
+        color:white;
+        text-align:center;
+      ">
+        
+
+        <audio autoplay loop>
+          <source src="Love.mp3" type="audio/mpeg">
+        </audio>
+
+        <h1>knew you would say yes ❤️🥰</h1>
+        <p>You made my Valentine special 💖</p>
+
+        <img
+          src="https://media.tenor.com/f2IyZI3bPEwAAAAm/spams-hun.webp"
+          style="width:250px;"
+        >
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>
